@@ -1,25 +1,23 @@
 @import "tailwindcss";
 
-
+/* ================================
+   THEME COLORS
+================================ */
 @theme {
-  --color-bg-one: rgb(var(--bg-one));
-  --color-bg-two: rgb(var(--bg-two));
-  --color-foreground: rgb(var(--foreground));
-
+  --color-bg-one: var(--bg-one);
+  --color-bg-two: var(--bg-two);
+  --color-foreground: var(--foreground);
 }
 
-
+/* ================================
+   BASE STYLES
+================================ */
 @layer base {
   :root {
     --bg-one: rgb(255, 255, 255);
     --bg-two: rgb(227, 235, 243);
     --foreground: rgb(247, 148, 32);
   }
-
-  /* .dark {
-    
-  } */
-
 
   html {
     @apply scroll-smooth;
@@ -30,37 +28,36 @@
     @apply transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
     scroll-padding-top: 5rem;
-
   }
 }
 
+/* ================================
+   CUSTOM UTILITIES
+================================ */
+
 @utility container {
+  width: 100%;
   margin-inline: auto;
   padding-inline: 2rem;
 
-  @media (min-width >=640px) {
+  @media (min-width: 640px) {
     max-width: 640px;
-
   }
 
-  @media (min-width >=768px) {
+  @media (min-width: 768px) {
     max-width: 768px;
-
   }
 
-  @media (min-width >=1024px) {
+  @media (min-width: 1024px) {
     max-width: 1024px;
-
   }
 
-  @media (min-width >=1280px) {
+  @media (min-width: 1280px) {
     max-width: 1280px;
-
   }
 
-  @media (min-width >=1400px) {
+  @media (min-width: 1400px) {
     max-width: 1400px;
-
   }
 }
 
@@ -75,7 +72,11 @@
   scrollbar-width: none;
 }
 
-
+@layer utilities {
+  .card-shadow {
+    box-shadow: 0 8px 20px 6px rgba(0, 0, 0, 0.15);
+  }
+}
 
 #root {
   max-width: 100%;
