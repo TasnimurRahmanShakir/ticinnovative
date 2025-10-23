@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@theme {
+  --color-bg-one: rgb(var(--bg-one));
+  --color-bg-two: rgb(var(--bg-two));
+  --color-foreground: rgb(var(--foreground));
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-one: rgb(255, 255, 255);
+    --bg-two: rgb(227, 235, 243);
+    --foreground: rgb(247, 148, 32);
+  }
+
+  /* .dark {
+    
+  } */
+
+
+  html {
+    @apply scroll-smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    scroll-padding-top: 5rem;
+
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (min-width >=640px) {
+    max-width: 640px;
+
+  }
+
+  @media (min-width >=768px) {
+    max-width: 768px;
+
+  }
+
+  @media (min-width >=1024px) {
+    max-width: 1024px;
+
+  }
+
+  @media (min-width >=1280px) {
+    max-width: 1280px;
+
+  }
+
+  @media (min-width >=1400px) {
+    max-width: 1400px;
+
+  }
+}
+
+
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
