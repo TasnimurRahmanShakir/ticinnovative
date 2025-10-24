@@ -38,7 +38,7 @@
 @utility container {
   width: 100%;
   margin-inline: auto;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
 
   @media (min-width: 640px) {
     max-width: 640px;
@@ -70,6 +70,39 @@
 
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+@utility thin-scrollbar {
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+  }
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #fff #f1f1f1;
 }
 
 @layer utilities {

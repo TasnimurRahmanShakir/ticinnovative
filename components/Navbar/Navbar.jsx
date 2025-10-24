@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import MobileNav from "./MobileNav";
+import MobileMenu from "./MobileMenu";
 
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
@@ -67,6 +68,7 @@ export default function Navbar() {
           </nav>
           
           <MobileNav />
+          <MobileMenu />
 
     </>
   );
