@@ -7,6 +7,8 @@
   --color-bg-one: var(--bg-one);
   --color-bg-two: var(--bg-two);
   --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
 /* ================================
@@ -28,6 +30,7 @@
     @apply transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
     scroll-padding-top: 5rem;
+    @apply antialiased w-full;
   }
 }
 
