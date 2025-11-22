@@ -1,10 +1,10 @@
 
-
 import GetStartedToday from "@/components/GetStartedToday";
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
 import NavItems from "@/components/Navbar/NavItems";
 import Services from "@/components/Services";
+import Testimonial from "@/components/Testimonial";
 import WhyChooseUs from "@/components/WhyChooseUs";
 
 
@@ -24,6 +24,7 @@ export default function Home() {
       <HowItWorks />
       <WhyChooseUs />
       <GetStartedToday />
+      <Testimonial />
     </div>
   );
 }
