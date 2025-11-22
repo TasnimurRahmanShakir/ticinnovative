@@ -13,7 +13,7 @@ export default function NavItems() {
   };
 
   return (
-    <nav className=" hidden md:block bg-[#f79420] w-full">
+    <nav className=" hidden md:block bg-[#f79420] w-full relative z-10">
       <ul className="flex flex-wrap items-start justify-start w-full container mx-auto ">
         {navItems.map((item) => (
           <li

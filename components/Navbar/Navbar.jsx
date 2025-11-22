@@ -15,16 +15,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="container mx-auto hidden md:block">
-        <div className="bg-bg-one duration-300 flex items-center justify-between py-6">
+      <nav className="w-full bg-white  hidden md:block relative z-50">
+        <div className="container mx-auto  duration-300 flex items-center justify-between py-6">
           {/* Logo */}
           <div className="cursor-pointer lg:pr-10">
-            <Image
-              src="/logo.jpg"
-              alt="ticinnovative-logo"
-              width={100}
-              height={120}
-            />
+            <Image src="/logo.jpg" alt="logo" width={100} height={120} />
           </div>
 
           <div className="flex items-center justify-between gap-5 w-[80%]">
@@ -65,11 +60,10 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-          </nav>
-          
-          <MobileNav />
-          <MobileMenu />
+      </nav>
 
+      <MobileNav />
+      <MobileMenu />
     </>
   );
 }

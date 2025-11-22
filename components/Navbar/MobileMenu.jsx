@@ -78,7 +78,7 @@ export default function MobileMenu({ open, close }) {
                 "border-b-2 border-zinc-300 p-3 w-full hover:bg-[rgb(234,237,237)] cursor-pointer",
                 index === menuItems.length - 1 ? "border-none" : ""
               )}
-              onClick={close} // closes menu on click
+              onClick={close} 
             >
               {item}
             </li>
