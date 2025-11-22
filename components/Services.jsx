@@ -11,7 +11,7 @@ import ServiceCard from "./UI/ServiceCard";
 
 export default function Services() {
   return (
-    <section className="w-full">
+    <section className="w-full bg-white relative z-10">
       <ServiceCard
         items={amazonService}
         align="md:flex-row"
