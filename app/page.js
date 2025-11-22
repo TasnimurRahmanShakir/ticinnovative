@@ -1,5 +1,6 @@
 
 
+import GetStartedToday from "@/components/GetStartedToday";
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
 import NavItems from "@/components/Navbar/NavItems";
@@ -22,6 +23,7 @@ export default function Home() {
       <Services />
       <HowItWorks />
       <WhyChooseUs />
+      <GetStartedToday />
     </div>
   );
 }
