@@ -5,7 +5,10 @@ import WorksCard from "./UI/WorksCard";
 import { howItWorks } from "@/Constants/HowItWorks";
 import { motion } from "framer-motion";
 
-export default function HowItWorks() {
+export default function HowItWorks({ items, title }) {
+  const data = items || howItWorks;
+  const sectionTitle = title || "How It Works";
+
   const getVariants = (index, total) => {
     if (index === 0) {
       return {
@@ -28,16 +31,16 @@ export default function HowItWorks() {
   return (
     <section className="bg-transparent py-20 relative z-10 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl text-white pb-16 text-center w-full">How It Works</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-          {howItWorks.map((item, index) => (
+        <h1 className="text-3xl text-white pb-16 text-center w-full">{sectionTitle}</h1>
+        <div className={`grid grid-cols-1 ${data.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-8 w-full`}>
+          {data.map((item, index) => (
             <motion.div
               key={item.id}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              variants={getVariants(index, howItWorks.length)}
+              variants={getVariants(index, data.length)}
               className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col items-center text-center h-full"
             >
               <WorksCard title={item.title} desc={item.desc} />

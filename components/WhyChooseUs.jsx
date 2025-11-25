@@ -30,15 +30,19 @@ const items = [
   },
 ];
 
-export default function WhyChooseUs() {
+export default function WhyChooseUs({ itemsProps, title, image }) {
+  const data = itemsProps || items;
+  const sectionTitle = title || "Why Choose Us?";
+  const sectionImage = image || "/images/whyChooseUs.png";
+
   return (
     <section className="bg-white relative z-10 pb-18">
       <div className="container mx-auto lg:px-28 px-4">
-        <h1 className="text-3xl py-18">Why Choose Us?</h1>
+        <h1 className="text-3xl py-18">{sectionTitle}</h1>
 
         <div className="flex flex-col md:flex-row gap-10 items-start justify-between">
           <div className="w-full md:w-1/2 space-y-2">
-            {items.map((item) => (
+            {data.map((item) => (
               <div key={item.id} className="flex gap-3 items-center">
                 <Icon
                   name="Done"
@@ -55,8 +59,8 @@ export default function WhyChooseUs() {
           <div className="w-full md:w-1/2 md:top-24">
             <div className="relative rounded-xl overflow-hidden">
               <Image
-                src="/images/whyChooseUs.png"
-                alt="Why Choose Us"
+                src={sectionImage}
+                alt={sectionTitle}
                 width={600}
                 height={800}
                 className="w-full h-auto object-cover"

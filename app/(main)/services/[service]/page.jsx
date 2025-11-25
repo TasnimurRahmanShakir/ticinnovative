@@ -8,6 +8,19 @@ import {
   threePLService,
   warehouseSupportService,
 } from "@/Constants/ServiceItems";
+import HeroSection from "@/components/HeroSection";
+import ContentSection from "@/components/ContentSection";
+import HowItWorks from "@/components/HowItWorks";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import GetStartedToday from "@/components/GetStartedToday";
+import {
+  wfsHero,
+  wfsIntro,
+  wfsHowItWorks,
+  wfsServices,
+  wfsWhyChooseUs,
+  wfsCta,
+} from "@/Constants/WfsData";
 
 export default async function Page({ params }) {
   const { service } = await params;
@@ -25,26 +38,58 @@ export default async function Page({ params }) {
   }
 
   return (
-    <section id="services" className="w-full bg-white relative z-10">
+    <>
       {service === "amazon-fba-fbm" && (
         <>
-          <ServiceCard
-            items={amazonService}
-            align="md:flex-row"
-            image="/images/ServiceOne.jpg"
-            header={true}
+          <HeroSection
+            image="/images/heroAmazonFBA.webp"
+            title="Streamline Your Amazon Business with Expert Amazon FBA Prep And Amazon FBM Services."
+            desc="Welcome to TIC Innovative Inc, your trusted partner for Amazon FBA Prep, FBM, Delivery, Carton Handling, 3PL Services, and Warehouse Support. We specialize in helping Amazon sellers like you save time, reduce costs, and scale your business with seamless logistics solutions."
           />
-          <ServiceCard
-            items={amazonFBMService}
-            align="md:flex-row-reverse"
-            image="/images/ServiceTwo.jpg"
-            bgColor="bg-[#e3ebf5]"
-          />
+          <section id="services" className="w-full bg-white relative z-10">
+            {" "}
+            <ServiceCard
+              items={amazonService}
+              align="md:flex-row"
+              image="/images/ServiceOne.jpg"
+              header={true}
+            />
+            <ServiceCard
+              items={amazonFBMService}
+              align="md:flex-row-reverse"
+              image="/images/ServiceTwo.jpg"
+              bgColor="bg-[#e3ebf5]"
+            />{" "}
+          </section>
         </>
       )}
-      {service === "wfs-service" && <div>hello WFS</div>}
+      {service === "wfs-service" && (
+        <>
+          <HeroSection {...wfsHero} />
+          <ContentSection {...wfsIntro} />
+          <HowItWorks
+            items={wfsHowItWorks}
+            title="Your Path to Seamless Fulfillment"
+          />
+          <section id="services" className="w-full bg-white relative z-10">
+            <ServiceCard
+              items={wfsServices}
+              align="md:flex-row"
+              image="/images/ServiceThree.jpg" // Reusing an image as placeholder
+              header={true}
+              bgColor="bg-[#e3ebf5]"
+            />
+          </section>
+          <WhyChooseUs
+            items={wfsWhyChooseUs}
+            title="The Partner You Need for The Growth You Want"
+            image="/images/ServiceFour.png" // Reusing an image as placeholder
+          />
+          <GetStartedToday {...wfsCta} />
+        </>
+      )}
       {service === "courier-delivery" && <div>hello Courier</div>}
       {service === "warehouse-support" && <div>hello Warehouse</div>}
-    </section>
+    </>
   );
 }
