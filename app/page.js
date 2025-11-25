@@ -1,4 +1,5 @@
 
+import FAQ from "@/components/FAQ";
 import GetStartedToday from "@/components/GetStartedToday";
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
@@ -25,6 +26,7 @@ export default function Home() {
       <WhyChooseUs />
       <GetStartedToday />
       <Testimonial />
+      <FAQ />
     </div>
   );
 }
