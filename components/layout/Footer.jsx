@@ -37,7 +37,7 @@ export default function Footer() {
             <div>
               <ContactLabel icon={<FaHome />} text="Address" />
               <div className="pl-1 mt-2 leading-relaxed">
-                <p className="font-medium text-gray-800">Tic Innovative Inc</p>
+                <p className="font-medium text-gray-800">Pakphire</p>
                 <p>Jamaica Branch</p>
                 <p>Building Number: 184 -04 Hillside Avenue,</p>
                 <p>City :- Jamaica, State :- NY, Post code :- 11432</p>
@@ -53,7 +53,7 @@ export default function Footer() {
             {/* Email */}
             <div>
               <ContactLabel icon={<FaEnvelope />} text="Email" />
-              <p className="pl-1 mt-1">support@ticinnovative.com</p>
+              <p className="pl-1 mt-1">support@pakphire.com</p>
             </div>
 
             {/* Open Time */}

@@ -5,7 +5,7 @@ const items = [
   {
     id: 1,
     message:
-      "Since partnering with TIC Innovative Inc., our fulfillment process has been flawless. Their team is professional, reliable, and truly understands the needs of Amazon sellers.",
+      "Since partnering with Pakphire, our fulfillment process has been flawless. Their team is professional, reliable, and truly understands the needs of Amazon sellers.",
     image: "/logo.jpg",
     name: "Sarah Jenkins",
     title: "CEO, Jenkins Enterprises",
@@ -38,8 +38,6 @@ export default function Testimonial() {
           {items.map((item) => (
             <div
               key={item.id}
-              // FIX 1: Changed max-w-[450px] to max-w-[600px] to make it wider (rectangular)
-              // FIX 2: Added 'md:w-1/2' so they take up half the container width each
               className="bg-white rounded-3xl p-10 flex flex-col justify-between items-center text-center w-full md:w-1/2 max-w-[600px] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.15)] transition-shadow duration-300"
             >
               <div className="mb-8 relative">

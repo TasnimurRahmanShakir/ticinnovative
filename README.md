@@ -1,10 +1,11 @@
-# TIC Innovative Inc - Web Application
+# Pakphire - Web Application
 
-Welcome to the TIC Innovative Inc web application repository. This project is a Next.js application designed to showcase the logistics and fulfillment services offered by TIC Innovative Inc, specifically focusing on Amazon FBA/FBM and Walmart Fulfillment Services (WFS).
+Welcome to the Pakphire web application repository. This project is a Next.js application designed to showcase the logistics and fulfillment services offered by Pakphire, specifically focusing on Amazon FBA/FBM and Walmart Fulfillment Services (WFS).
 
 ## Features
 
 -   **Dynamic Service Pages**: Reusable layout and components for various services (Amazon FBA, WFS, etc.).
+-   **Dynamic Metadata**: SEO-friendly titles and descriptions dynamically generated for each service page.
 -   **WFS Prep Service Page**: A dedicated page for Walmart Fulfillment Service preparation, featuring:
     -   Hero section with call-to-action.
     -   Problem/Solution intro.

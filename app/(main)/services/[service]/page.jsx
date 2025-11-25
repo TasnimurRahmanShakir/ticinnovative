@@ -44,7 +44,7 @@ export default async function Page({ params }) {
           <HeroSection
             image="/images/heroAmazonFBA.webp"
             title="Streamline Your Amazon Business with Expert Amazon FBA Prep And Amazon FBM Services."
-            desc="Welcome to TIC Innovative Inc, your trusted partner for Amazon FBA Prep, FBM, Delivery, Carton Handling, 3PL Services, and Warehouse Support. We specialize in helping Amazon sellers like you save time, reduce costs, and scale your business with seamless logistics solutions."
+            desc="Welcome to Pakphire, your trusted partner for Amazon FBA Prep, FBM, Delivery, Carton Handling, 3PL Services, and Warehouse Support. We specialize in helping Amazon sellers like you save time, reduce costs, and scale your business with seamless logistics solutions."
           />
           <section id="services" className="w-full bg-white relative z-10">
             {" "}

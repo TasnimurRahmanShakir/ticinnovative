@@ -13,7 +13,7 @@ export const wfsIntro = {
         "Costly penalties.",
         "Frustrating delays."
     ],
-    solution: "TIC Innovative Inc eliminates the complexity. We are your end-to-end partner for Walmart Fulfillment Service (WFS) preparation, ensuring your products are accepted the first time, every time. Focus on growing your sales—we’ll handle the logistics."
+    solution: "Pakphire eliminates the complexity. We are your end-to-end partner for Walmart Fulfillment Service (WFS) preparation, ensuring your products are accepted the first time, every time. Focus on growing your sales—we’ll handle the logistics."
 };
 
 export const wfsHowItWorks = [
