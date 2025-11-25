@@ -14,7 +14,7 @@ const HeroSection = () => {
 
       {/* Content above the image */}
       {/* 1. Changed 'container' to 'w-full' to fill the screen width */}
-      <div className="relative z-10 text-center w-full container px-4 font-sans max-w-[1100px]">
+      <div className="relative z-10 text-center w-full container mx-auto px-4 font-sans max-w-[1100px]">
         <h1 className="text-4xl md:text-4xl mb-4">
           Streamline Your Amazon Business with Expert FBA Prep, FBM, Delivery,
           and 3PL Services

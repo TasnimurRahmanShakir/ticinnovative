@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 
-import ContactLabel from "./UI/ContactLabel";
-import SocialIcon from "./UI/SocialIcon";
+import ContactLabel from "../UI/ContactLabel";
+import SocialIcon from "../UI/SocialIcon";
 
 import {
   FaHome,
@@ -144,7 +144,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-
-
-

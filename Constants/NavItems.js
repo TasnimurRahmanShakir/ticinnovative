@@ -1,74 +1,43 @@
+import { href } from "react-router-dom";
+
+export const NAV_LINKS = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  {
+    name: "Services",
+    href: "#services",
+    isDropdown: true,
+    subItems: [{
+      id: 1,
+      name: "Amazon FBA Prep & FBM",
+      href: '/services/amazon-fba-fbm'
+    },
+    {
+      id: 2,
+      name: "WFS Prep Services",
+      href: '/services/wfs-service'
+
+    },
+    {
+      id: 3,
+      name: "Courier & Delivery",
+      href: '/services/courier-delivery'
+
+    },
+    {
+      id: 3,
+      name: "Warehouse Support",
+      href: '/services/warehouse-support'
+
+    },
 
 
-export const navItems = [
-  {
-    id: 1,
-    title: "Home",
-    href: "/",
+
+
+    ]
   },
-  {
-    id: 2,
-    title: "Amazon FBA/FBM Prep Service",
-    href: "/amazon-service",
-  },
-  {
-    id: 3,
-    title: "WFS Prep Service",
-    href: "/wfs-service",
-  },
-  {
-    id: 4,
-    title: "Storage/ WareHouse",
-    href: "/storage-warehouse",
-  },
-  {
-    id: 5,
-    title: "Boxes or Cotton Supply",
-    href: "/boxes-cotton-supply",
-  },
-  {
-    id: 6,
-    title: "Sipping / Cargo USA & International ",
-    href: "/shipping",
-  },
-  {
-    id: 7,
-    title: "Courier & Delivery",
-    href: "/courier-delivery",
-  },
-  {
-    id: 8,
-    title: "Carton Handling",
-    href: "/carton-handling",
-  },
-  {
-    id: 9,
-    title: "Our Products",
-    href: "/our-products",
-  },
-  {
-    id: 10,
-    title: "Media",
-    href: "/media",
-  },
-  {
-    id: 11,
-    title: "About Us",
-    href: "/about-us",
-  },
-  {
-    id: 12,
-    title: "WareHouse",
-    href: "/warehouse",
-  },
-  {
-    id: 13,
-    title: "Payment",
-    href: "/payment",
-  },
-  {
-    id: 14,
-    title: "Contact Us",
-    href: "/contact-us",
-  },
+  { name: "Products", href: "/products" },
+  { name: "Media", href: "/media" },
+  { name: "Payment", href: "/payment" },
+  { name: "Contact", href: "/contact" },
 ];

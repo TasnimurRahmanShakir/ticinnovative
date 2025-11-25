@@ -3,7 +3,6 @@ import FAQ from "@/components/FAQ";
 import GetStartedToday from "@/components/GetStartedToday";
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
-import NavItems from "@/components/Navbar/NavItems";
 import Services from "@/components/Services";
 import Testimonial from "@/components/Testimonial";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -19,7 +18,6 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black opacity-60"></div>
       </div>
-      <NavItems />
       <HeroSection />
       <Services />
       <HowItWorks />
