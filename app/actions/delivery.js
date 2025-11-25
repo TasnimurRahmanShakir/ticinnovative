@@ -41,3 +41,18 @@ export async function submitShipForMeForm(formData) {
 
     return { success: true, data: rawFormData };
 }
+
+export async function submitWarehouseBooking(formData) {
+    const rawFormData = {
+        name: formData.get('name'),
+        whatsapp: formData.get('whatsapp'),
+        email: formData.get('email'),
+        country: formData.get('country'),
+        spaceRequirement: formData.get('spaceRequirement'),
+        note: formData.get('note'),
+    }
+
+    console.log("Server Action: Warehouse Booking Form Data Submitted", rawFormData);
+
+    return { success: true, data: rawFormData };
+}

@@ -66,14 +66,14 @@ export default function CourierDelivery() {
           <div className='container mx-auto py-12 text-center'>
               <h1 className='text-3xl mb-3'>Pickup & Drop-off Locations</h1>
               <p className='text-lg'>Easily send and receive packages through our trusted access points.</p>
-              <div className="w-full mt-8 rounded-lg overflow-hidden">
+              <div className="w-full md:w-[80%] mx-auto mt-8 rounded-lg overflow-hidden flex items-center justify-center    ">
                 <Image
                     src="/images/pickup-drop-location.webp"
                     alt="Pickup & Drop-off Locations"
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="w-full h-auto"
+                    className="w-full h-auto "
                 />
                 </div>
           </div>

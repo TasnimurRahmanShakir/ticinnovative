@@ -22,6 +22,7 @@ import {
   wfsWhyChooseUs,
   wfsCta,
 } from "@/Constants/WfsData";
+import WarehouseSupport from "./WarehouseSupport";
 
 export default async function Page({ params }) {
   const { service } = await params;
@@ -90,7 +91,7 @@ export default async function Page({ params }) {
         </>
       )}
       {service === "courier-delivery" && <CourierDelivery />}
-      {service === "warehouse-support" && <div>hello Warehouse</div>}
+      {service === "warehouse-support" && <WarehouseSupport />}
     </>
   );
 }
