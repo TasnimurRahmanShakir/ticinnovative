@@ -49,3 +49,58 @@ export const trackData = [
         href: "https://tools.usps.com/go/TrackConfirmAction_input"
     }
 ]
+
+export const deliveryService = [
+    {
+        id: 1,
+        title: "Delivery & Courier",
+        desc: "From warehouse to doorstep, we’ve got you covered:",
+        services: [
+            {
+                id: 1,
+                heading: "Efficient Delivery",
+                desc: "Timely and cost-effective shipping solutions.",
+            },
+            {
+                id: 2,
+                heading: "Carton Handling",
+                desc: "Proper packaging and palletizing for safe transit.",
+            },
+            {
+                id: 3,
+                heading: "Freight Management",
+                desc: "Streamlined logistics for bulk shipments.",
+            }
+        ],
+        
+    }
+]
+
+
+export const countryData = [
+    {
+        id: 1,
+        name: "Bangladesh",
+        logo: "/country/bd.webp",
+    },
+    {
+        id: 2,
+        name: "India",
+        logo: "/country/in.webp",
+    },
+    {
+        id: 3,
+        name: "Pakistan",
+        logo: "/country/pak.webp",
+    },
+    {
+        id: 4,
+        name: "Mexico",
+        logo: "/country/mx.webp",
+    },
+    {
+        id: 5,
+        name: "Jamaica",
+        logo: "/country/jm.webp",
+    }
+]

@@ -1,12 +1,15 @@
 'use client'
 
 import React, {useState} from 'react'
-import { deliveryHero, deliveryCategories, trackData } from '@/Constants/deliveryData'
+import { deliveryHero, deliveryCategories, trackData, deliveryService } from '@/Constants/deliveryData'
 import { cn } from '@/lib/utils'
 import { Input } from '@/components/UI/Input'
 import { submitDeliveryForm, submitBuyForm, submitShipForMeForm } from '@/app/actions/delivery'
 import Link from 'next/link'
 import Image from 'next/image'
+import ServiceCard from '@/components/UI/ServiceCard'
+import ServicesFrom from './servicesFrom'
+import GetStartedToday from '@/components/GetStartedToday'
 
 export default function CourierDelivery() {
     const [deliveryType, setDeliveryType] = useState('ship');
@@ -16,7 +19,8 @@ export default function CourierDelivery() {
     }
 
   return (
-    <section className="relative w-full min-h-[600px] flex items-center justify-center text-white overflow-hidden">
+      <>
+      <div className="relative w-full min-h-[600px] flex items-center justify-center text-white overflow-hidden">
         {/* Background Image */}
         <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -47,8 +51,35 @@ export default function CourierDelivery() {
                     {deliveryType === 'track' && <Track />}
                 </div>
             </div>
-        </div>
-    </section>
+          </div>
+          
+          
+    </div>
+        <ServiceCard
+          items={deliveryService}
+          align="md:flex-row"
+          image="/images/delivery.webp"
+          />
+
+          <ServicesFrom />
+
+          <div className='container mx-auto py-12 text-center'>
+              <h1 className='text-3xl mb-3'>Pickup & Drop-off Locations</h1>
+              <p className='text-lg'>Easily send and receive packages through our trusted access points.</p>
+              <div className="w-full mt-8 rounded-lg overflow-hidden">
+                <Image
+                    src="/images/pickup-drop-location.webp"
+                    alt="Pickup & Drop-off Locations"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-full h-auto"
+                />
+                </div>
+          </div>
+
+          <GetStartedToday />
+      </>
   )
 }
 
