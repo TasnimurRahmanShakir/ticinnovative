@@ -13,6 +13,7 @@ import ContentSection from "@/components/ContentSection";
 import HowItWorks from "@/components/HowItWorks";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import GetStartedToday from "@/components/GetStartedToday";
+import CourierDelivery from "./CourierDelivery";
 import {
   wfsHero,
   wfsIntro,
@@ -75,7 +76,7 @@ export default async function Page({ params }) {
             <ServiceCard
               items={wfsServices}
               align="md:flex-row"
-              image="/images/ServiceThree.jpg" // Reusing an image as placeholder
+              image="/images/ServiceThree.jpg" 
               header={true}
               bgColor="bg-[#e3ebf5]"
             />
@@ -83,12 +84,12 @@ export default async function Page({ params }) {
           <WhyChooseUs
             items={wfsWhyChooseUs}
             title="The Partner You Need for The Growth You Want"
-            image="/images/ServiceFour.png" // Reusing an image as placeholder
+            image="/images/ServiceFour.png" 
           />
           <GetStartedToday {...wfsCta} />
         </>
       )}
-      {service === "courier-delivery" && <div>hello Courier</div>}
+      {service === "courier-delivery" && <CourierDelivery />}
       {service === "warehouse-support" && <div>hello Warehouse</div>}
     </>
   );
