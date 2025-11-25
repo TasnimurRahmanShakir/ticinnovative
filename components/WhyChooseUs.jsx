@@ -46,7 +46,7 @@ export default function WhyChooseUs({ itemsProps, title, image }) {
               <div key={item.id} className="flex gap-3 items-center">
                 <Icon
                   name="Done"
-                  className="text-[#f79420] h-12 w-12 border-4 p-px font-semibold border-[#f79420] rounded-full shrink-0 "
+                  className="text-primary h-12 w-12 border-4 p-px font-semibold border-primary rounded-full shrink-0 "
                 />
                 <div>
                   <h2 className="text-xl ">{item.title}</h2>

@@ -7,7 +7,7 @@ export default function GetStartedToday({ title, desc, buttonText, buttonLink })
   const btnText = buttonText || "Contact Us";
 
   return (
-    <section className="w-full relative z-10 bg-[#f79420] py-16">
+    <section className="w-full relative z-10 bg-primary py-16">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-8">
         <div className="text-white max-w-3xl md:text-left md:w-3/4 w-full">
           <h2 className="text-2xl md:text-3xl font-serif mb-4">

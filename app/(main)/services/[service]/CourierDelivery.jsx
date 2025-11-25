@@ -36,9 +36,9 @@ export default function CourierDelivery() {
             {/* Right Form - Blurry Card */}
             <div className="w-full lg:w-[450px] backdrop-blur-md bg-white/50  rounded-2xl overflow-hidden shadow-2xl">
                 <div className='flex w-full items-center justify-evenly bg-white'>
-                    <button onClick={() => handleDeliveryType('ship')} className={cn(deliveryType === 'ship' ? 'bg-[#f79420] text-white' : 'hover:bg-gray-100 text-black', 'w-full px-4 py-3 transition-colors duration-200 font-medium cursor-pointer')}>Ship</button>
-                    <button onClick={() => handleDeliveryType('shop')} className={cn(deliveryType === 'shop' ? 'bg-[#f79420] text-white' : 'hover:bg-gray-100 text-black', 'w-full px-4 py-3 transition-colors duration-200 font-medium cursor-pointer')}>Shop</button>
-                    <button onClick={() => handleDeliveryType('track')} className={cn(deliveryType === 'track' ? 'bg-[#f79420] text-white' : 'hover:bg-gray-100 text-black', 'w-full px-4 py-3 transition-colors duration-200 font-medium cursor-pointer')}>Track</button>
+                    <button onClick={() => handleDeliveryType('ship')} className={cn(deliveryType === 'ship' ? 'bg-primary text-white' : 'hover:bg-gray-100 text-secondary', 'w-full px-4 py-3 transition-colors duration-200 font-medium cursor-pointer')}>Ship</button>
+                    <button onClick={() => handleDeliveryType('shop')} className={cn(deliveryType === 'shop' ? 'bg-primary text-white' : 'hover:bg-gray-100 text-secondary', 'w-full px-4 py-3 transition-colors duration-200 font-medium cursor-pointer')}>Shop</button>
+                    <button onClick={() => handleDeliveryType('track')} className={cn(deliveryType === 'track' ? 'bg-primary text-white' : 'hover:bg-gray-100 text-secondary', 'w-full px-4 py-3 transition-colors duration-200 font-medium cursor-pointer')}>Track</button>
                 </div>
 
                 <div className="p-6">
@@ -88,7 +88,7 @@ function Delivery() {
                 type='email' 
                 className=" focus:bg-white"
             />
-            <button type="submit" className='bg-[#f79420] hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2'>Submit Request</button>
+            <button type="submit" className='bg-primary hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2'>Submit Request</button>
         </form>
     )
 }
@@ -102,8 +102,8 @@ function Shop() {
     return (
         <div>
             <div className='flex w-full items-center justify-evenly border-b border-white/10'>
-                <button onClick={() => handleShopType('buy')} className={cn(shopType === 'buy' ? 'bg-[#f79420] text-white' : 'hover:bg-gray-100 text-black', 'w-full px-4 py-3 transition-colors duration-200 font-medium cursor-pointer')}>Buy for me</button>
-                <button onClick={() => handleShopType('ship')} className={cn(shopType === 'ship' ? 'bg-[#f79420] text-white' : 'hover:bg-gray-100 text-black', 'w-full px-4 py-3 transition-colors duration-200 font-medium cursor-pointer')}>Ship for me</button>
+                <button onClick={() => handleShopType('buy')} className={cn(shopType === 'buy' ? 'bg-primary text-white' : 'hover:bg-gray-100 text-secondary', 'w-full px-4 py-3 transition-colors duration-200 font-medium cursor-pointer')}>Buy for me</button>
+                <button onClick={() => handleShopType('ship')} className={cn(shopType === 'ship' ? 'bg-primary text-white' : 'hover:bg-gray-100 text-secondary', 'w-full px-4 py-3 transition-colors duration-200 font-medium cursor-pointer')}>Ship for me</button>
             </div>
 
             <div className="p-6">
@@ -119,12 +119,12 @@ function Track() {
     
     return (
         <div className='flex flex-col gap-4 items-center justify-center'>
-            <h1 className='text-2xl pb-10 text-black'>Track Your Package</h1>
+            <h1 className='text-2xl pb-10 text-secondary'>Track Your Package</h1>
             {trackData.map((item) => (
                 <div key={item.id} className='bg-white py-2 rounded-xl flex items-center justify-around gap-2 w-full'>
                     <Image src={item.image} alt={item.name} width={50} height={50} className='w-10 h-10 rounded-full' />
-                    <h3 className='text-black'>{item.name}</h3>
-                    <Link href={item.href} target='_blank' rel='noopener noreferrer' className='bg-[#f79420] px-4 py-2 rounded-lg'>Track</Link>
+                    <h3 className='text-secondary'>{item.name}</h3>
+                    <Link href={item.href} target='_blank' rel='noopener noreferrer' className='bg-primary px-4 py-2 rounded-lg'>Track</Link>
                 </div>
             ))}
         </div>
@@ -153,7 +153,7 @@ function Buy() {
                 type='email' 
                 className=" focus:bg-white"
             />
-            <button type="submit" className='bg-[#f79420] hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2'>Submit Request</button>
+            <button type="submit" className='bg-primary hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2'>Submit Request</button>
         </form>
     )
 }
@@ -186,7 +186,7 @@ function ShipPlaceholder() {
                 options={deliveryCategories} 
                 className="focus:bg-white"
             />
-            <button type="submit" className='bg-[#f79420] hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2'>Submit Request</button>
+            <button type="submit" className='bg-primary hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2'>Submit Request</button>
         </form>
     )
 }

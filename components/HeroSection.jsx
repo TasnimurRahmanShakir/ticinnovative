@@ -26,7 +26,7 @@ const HeroSection = ({ image, title, desc, buttonText, buttonLink }) => {
           <div className="mt-8">
             <Link
               href={buttonLink || "/contact"}
-              className="bg-[#f79420] hover:bg-[#e68a1e] text-white text-lg font-semibold py-3 px-8 rounded-full transition-all duration-300"
+              className="bg-primary hover:bg-[#e68a1e] text-white text-lg font-semibold py-3 px-8 rounded-full transition-all duration-300"
             >
               {buttonText}
             </Link>

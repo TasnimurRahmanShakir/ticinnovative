@@ -20,7 +20,7 @@ import {
 export default function Footer() {
   // Common class for links to ensure consistency
   const linkHoverClasses =
-    "block transition-all duration-300 hover:text-[#f79420] hover:translate-x-2";
+    "block transition-all duration-300 hover:text-primary hover:translate-x-2";
 
   return (
     <footer className="bg-[#f9f9f9] relative z-10 text-gray-600 text-sm">
@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: Contact Us */}
           <div className="space-y-6">
-            <h3 className="text-gray-900 font-bold uppercase tracking-wide relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#f79420] after:mt-2">
+            <h3 className="text-gray-900 font-bold uppercase tracking-wide relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-primary after:mt-2">
               Contact Us
             </h3>
 
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Column 2: Payment Details */}
           <div>
-            <h3 className="text-gray-900 font-bold uppercase tracking-wide relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#f79420] after:mt-2 mb-6">
+            <h3 className="text-gray-900 font-bold uppercase tracking-wide relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-primary after:mt-2 mb-6">
               Payment Details
             </h3>
             {/* Applied hover effect here */}
@@ -86,7 +86,7 @@ export default function Footer() {
 
           {/* Column 3: Our Stores */}
           <div>
-            <h3 className="text-gray-900 font-bold uppercase tracking-wide relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#f79420] after:mt-2 mb-6">
+            <h3 className="text-gray-900 font-bold uppercase tracking-wide relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-primary after:mt-2 mb-6">
               Our Stores
             </h3>
             <ul className="space-y-3">
@@ -105,7 +105,7 @@ export default function Footer() {
 
           {/* Column 4: Useful Links */}
           <div>
-            <h3 className="text-gray-900 font-bold uppercase tracking-wide relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#f79420] after:mt-2 mb-6">
+            <h3 className="text-gray-900 font-bold uppercase tracking-wide relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-primary after:mt-2 mb-6">
               Useful Links
             </h3>
             <ul className="space-y-3">

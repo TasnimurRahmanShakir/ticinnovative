@@ -27,7 +27,7 @@ export default function ServiceCard({ items, align, image, bgColor = null, heade
                 key={item.id}
                 className="border-b border-gray-200 pb-6 last:border-0"
               >
-                <h2 className="text-3xl font-bold py-2 text-[#f79420]">
+                <h2 className="text-3xl font-bold py-2 text-primary">
                   {item.id}. {item.title}
                 </h2>
 
