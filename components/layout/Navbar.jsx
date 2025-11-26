@@ -21,7 +21,7 @@ export default function Navbar() {
         <div className="container mx-auto sm:px-6">
           <div className="flex justify-between items-center h-20">
             {/* 1. LOGO */}
-            <div className="shrink-0 flex items-center cursor-pointer">
+            <div className="flex items-center cursor-pointer">
               {/* Link the logo to home for better UX */}
               <Link href="/">
                 <Image
@@ -36,7 +36,7 @@ export default function Navbar() {
             </div>
 
             {/* 2. DESKTOP NAVIGATION (Hidden on Mobile) */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-8 px-2">
               {NAV_LINKS.map((link) => (
                 <div
                   key={link.name}
