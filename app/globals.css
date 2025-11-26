@@ -10,6 +10,9 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-gradient-start: var(--gradient-start);
+  --color-gradient-end: var(--gradient-end);
+  --color-error: var(--error);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
@@ -21,10 +24,13 @@
   :root {
     --bg-one: rgb(255, 255, 255);
     --bg-two: rgb(227, 235, 243);
-    --foreground: rgb(247, 148, 32);
-    --primary: #f79420;
+    --foreground: #2340a1;
+    --primary: #2340a1;
     --secondary: #000000;
     --accent: #e3ebf5;
+    --gradient-start: #f19537;
+    --gradient-end: #f36530;
+    --error: #f31c1a;
   }
 
   html {

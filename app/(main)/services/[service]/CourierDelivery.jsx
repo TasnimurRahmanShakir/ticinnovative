@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState} from 'react'
+import React, {useState, useActionState} from 'react'
 import { deliveryHero, deliveryCategories, trackData, deliveryService } from '@/Constants/deliveryData'
 import { cn } from '@/lib/utils'
 import { Input } from '@/components/UI/Input'
@@ -85,42 +85,72 @@ export default function CourierDelivery() {
 
 
 function Delivery() {
+    const [state, formAction, isPending] = useActionState(submitDeliveryForm, { success: false, errors: {} })
     return (
-        <form action={submitDeliveryForm} className='flex flex-col gap-4'>
-            <Input 
-                name="senderAddress" 
-                placeholder='Enter Sender Address' 
-                type='text' 
-                className=" focus:bg-white"
-            />
-            <Input 
-                name="receiverAddress" 
-                placeholder='Enter Receiver Address' 
-                type='text' 
-                className="focus:bg-white"
-            />
-            <Input 
-                name="productType" 
-                placeholder='Product Type' 
-                type='select' 
-                options={deliveryCategories} 
-                className="focus:bg-white"
-            />
+        <>
+        {state?.success && (
+            <div className="bg-green-50 text-green-700 p-4 rounded-md border border-green-200 mb-4">
+                {state.message}
+            </div>
+        )}
+        <form action={formAction} className='flex flex-col gap-4'>
+            <div>
+                <Input 
+                    name="senderAddress" 
+                    placeholder='Enter Sender Address' 
+                    type='text' 
+                    defaultValue={state?.data?.senderAddress}
+                    className={`focus:bg-white ${state?.errors?.senderAddress ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.senderAddress && <p className="text-red-500 text-sm mt-1">{state.errors.senderAddress}</p>}
+            </div>
+            <div>
+                <Input 
+                    name="receiverAddress" 
+                    placeholder='Enter Receiver Address' 
+                    type='text' 
+                    defaultValue={state?.data?.receiverAddress}
+                    className={`focus:bg-white ${state?.errors?.receiverAddress ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.receiverAddress && <p className="text-red-500 text-sm mt-1">{state.errors.receiverAddress}</p>}
+            </div>
+            <div>
+                <Input 
+                    name="productType" 
+                    placeholder='Product Type' 
+                    type='select' 
+                    options={deliveryCategories} 
+                    defaultValue={state?.data?.productType}
+                    className={`focus:bg-white ${state?.errors?.productType ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.productType && <p className="text-red-500 text-sm mt-1">{state.errors.productType}</p>}
+            </div>
            
-            <Input 
-                name="contactNumber" 
-                placeholder="Whatsapp/ Contact Number" 
-                type='text' 
-                className=" focus:bg-white"
-            />
-            <Input 
-                name="email" 
-                placeholder="Email address" 
-                type='email' 
-                className=" focus:bg-white"
-            />
-            <button type="submit" className='bg-primary hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2'>Submit Request</button>
+            <div>
+                <Input 
+                    name="contactNumber" 
+                    placeholder="Whatsapp/ Contact Number" 
+                    type='text' 
+                    defaultValue={state?.data?.contactNumber}
+                    className={`focus:bg-white ${state?.errors?.contactNumber ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.contactNumber && <p className="text-red-500 text-sm mt-1">{state.errors.contactNumber}</p>}
+            </div>
+            <div>
+                <Input 
+                    name="email" 
+                    placeholder="Email address" 
+                    type='email' 
+                    defaultValue={state?.data?.email}
+                    className={`focus:bg-white ${state?.errors?.email ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.email && <p className="text-red-500 text-sm mt-1">{state.errors.email}</p>}
+            </div>
+            <button type="submit" disabled={isPending} className='bg-primary hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2 disabled:opacity-50'>
+                {isPending ? 'Submitting...' : 'Submit Request'}
+            </button>
         </form>
+        </>
     )
 }
 
@@ -163,61 +193,109 @@ function Track() {
 }
 
 function Buy() {
+    const [state, formAction, isPending] = useActionState(submitBuyForm, { success: false, errors: {} })
     return (
-            <form action={submitBuyForm} className='flex flex-col gap-4'>
-            <Input 
-                name="productLink" 
-                placeholder='Copy & paste your product link: https://www.amazon.com' 
-                type='text' 
-                className=" focus:bg-white"
-            />
-            <Input 
-                name="contactNumber" 
-                placeholder='Enter Contact Number' 
-                type='text' 
-                className="focus:bg-white"
-            />
+        <>
+        {state?.success && (
+            <div className="bg-green-50 text-green-700 p-4 rounded-md border border-green-200 mb-4">
+                {state.message}
+            </div>
+        )}
+            <form action={formAction} className='flex flex-col gap-4'>
+            <div>
+                <Input 
+                    name="productLink" 
+                    placeholder='Copy & paste your product link: https://www.amazon.com' 
+                    type='text' 
+                    defaultValue={state?.data?.productLink}
+                    className={`focus:bg-white ${state?.errors?.productLink ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.productLink && <p className="text-red-500 text-sm mt-1">{state.errors.productLink}</p>}
+            </div>
+            <div>
+                <Input 
+                    name="contactNumber" 
+                    placeholder='Enter Contact Number' 
+                    type='text' 
+                    defaultValue={state?.data?.contactNumber}
+                    className={`focus:bg-white ${state?.errors?.contactNumber ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.contactNumber && <p className="text-red-500 text-sm mt-1">{state.errors.contactNumber}</p>}
+            </div>
             
-            <Input 
-                name="email" 
-                placeholder="Email address" 
-                type='email' 
-                className=" focus:bg-white"
-            />
-            <button type="submit" className='bg-primary hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2'>Submit Request</button>
+            <div>
+                <Input 
+                    name="email" 
+                    placeholder="Email address" 
+                    type='email' 
+                    defaultValue={state?.data?.email}
+                    className={`focus:bg-white ${state?.errors?.email ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.email && <p className="text-red-500 text-sm mt-1">{state.errors.email}</p>}
+            </div>
+            <button type="submit" disabled={isPending} className='bg-primary hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2 disabled:opacity-50'>
+                {isPending ? 'Submitting...' : 'Submit Request'}
+            </button>
         </form>
+        </>
     )
 }
 
 function ShipPlaceholder() {
+    const [state, formAction, isPending] = useActionState(submitShipForMeForm, { success: false, errors: {} })
     return (
-        <form action={submitShipForMeForm} className='flex flex-col gap-4'>
-            <Input 
-                name="address" 
-                placeholder='Receiver Address' 
-                type='text' 
-                className=" focus:bg-white"
-            />
-            <Input 
-                name="email" 
-                placeholder="Receiver Email" 
-                type='email' 
-                className=" focus:bg-white"
-            />
-            <Input 
-                name="contactNumber" 
-                placeholder="Receiver WhatsApp/Phone number" 
-                type='text' 
-                className="focus:bg-white"
-            />
-            <Input 
-                name="productType" 
-                placeholder='Product Type' 
-                type='select' 
-                options={deliveryCategories} 
-                className="focus:bg-white"
-            />
-            <button type="submit" className='bg-primary hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2'>Submit Request</button>
+        <>
+        {state?.success && (
+            <div className="bg-green-50 text-green-700 p-4 rounded-md border border-green-200 mb-4">
+                {state.message}
+            </div>
+        )}
+        <form action={formAction} className='flex flex-col gap-4'>
+            <div>
+                <Input 
+                    name="address" 
+                    placeholder='Receiver Address' 
+                    type='text' 
+                    defaultValue={state?.data?.address}
+                    className={`focus:bg-white ${state?.errors?.address ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.address && <p className="text-red-500 text-sm mt-1">{state.errors.address}</p>}
+            </div>
+            <div>
+                <Input 
+                    name="email" 
+                    placeholder="Receiver Email" 
+                    type='email' 
+                    defaultValue={state?.data?.email}
+                    className={`focus:bg-white ${state?.errors?.email ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.email && <p className="text-red-500 text-sm mt-1">{state.errors.email}</p>}
+            </div>
+            <div>
+                <Input 
+                    name="contactNumber" 
+                    placeholder="Receiver WhatsApp/Phone number" 
+                    type='text' 
+                    defaultValue={state?.data?.contactNumber}
+                    className={`focus:bg-white ${state?.errors?.contactNumber ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.contactNumber && <p className="text-red-500 text-sm mt-1">{state.errors.contactNumber}</p>}
+            </div>
+            <div>
+                <Input 
+                    name="productType" 
+                    placeholder='Product Type' 
+                    type='select' 
+                    options={deliveryCategories} 
+                    defaultValue={state?.data?.productType}
+                    className={`focus:bg-white ${state?.errors?.productType ? 'border-red-500' : ''}`}
+                />
+                {state?.errors?.productType && <p className="text-red-500 text-sm mt-1">{state.errors.productType}</p>}
+            </div>
+            <button type="submit" disabled={isPending} className='bg-primary hover:bg-[#e0851d] text-white w-full px-4 py-3 cursor-pointer rounded-lg font-bold shadow-lg transition-all transform hover:scale-[1.02] mt-2 disabled:opacity-50'>
+                {isPending ? 'Submitting...' : 'Submit Request'}
+            </button>
         </form>
+        </>
     )
 }
