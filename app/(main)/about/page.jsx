@@ -8,9 +8,9 @@ export default async function AboutUs() {
         }, 1000)
     })
     const teamMembers = [
-        { name: 'Amelia Rose', role: 'CTO' , image: '/team/person-1.webp' },
-        { name: 'Mary Margaret', role: 'Software Architect' , image: '/team/person-2.webp' },
-        { name: 'John Doe', role: 'ADGM' , image: '/team/person-3.webp' },
+        { name: 'Kashif Arif', role: 'CTO' , image: '/team/Kashif-Arif.png' },
+        { name: 'Asif Omar', role: 'Software Architect' , image: '/team/Asif-Omar.png' },
+        { name: 'Afshan Omar', role: 'ADGM' , image: '/team/Afshan-Omar.png' },
     ];
 
   return (

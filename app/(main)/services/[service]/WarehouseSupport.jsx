@@ -2,8 +2,16 @@ import HeroSection from '@/components/HeroSection'
 import React from 'react'
 import { warehouseLocations } from '@/Constants/warehouseData'
 import Image from 'next/image'
-import WarehouseGallery from './WarehouseGallery'
 import WarehouseBooking from './WarehouseBooking'
+import PhotoGallery from '@/components/UI/PhotoGallery'
+import SectionHeading from '@/components/UI/SectionHeading'
+
+// Generate image paths
+const images = Array.from({ length: 31 }, (_, i) => ({
+    id: i + 1,
+    src: `/warehouse/warehoue-${i + 1}.jpg`,
+    alt: `Warehouse Image ${i + 1}`
+}))
 
 export default function WarehouseSupport() {
   return (
@@ -25,7 +33,12 @@ export default function WarehouseSupport() {
         </div>
       </section>
 
-      <WarehouseGallery />
+      <section className="py-16 bg-accent">
+        <div className="container mx-auto px-4">
+            <SectionHeading title="Our Warehouse Gallery" />
+            <PhotoGallery images={images} />
+        </div>
+      </section>
       <WarehouseBooking />
     </>
   )

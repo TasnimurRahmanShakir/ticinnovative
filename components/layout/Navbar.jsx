@@ -102,12 +102,12 @@ export default function Navbar() {
 
               {/* Desktop Only Icons (Mobile has them in bottom bar) */}
               <div className="hidden lg:flex items-center gap-2">
-                <button className="p-2 hover:bg-gray-100 rounded-full text-gray-600 transition-colors relative">
+                <Link href="/cart" className="p-2 hover:bg-gray-100 rounded-full text-gray-600 transition-colors relative">
                   <IoCartOutline size={24} />
                   <span className="absolute top-0 right-0 h-4 w-4 bg-orange-500 text-white text-[10px] font-bold flex items-center justify-center rounded-full">
                     0
                   </span>
-                </button>
+                </Link>
                 <button className="p-2 hover:bg-gray-100 rounded-full text-gray-600 transition-colors">
                   <IoPersonOutline size={24} />
                 </button>
