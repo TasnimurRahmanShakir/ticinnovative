@@ -1,64 +1,138 @@
-# Pakphire - Web Application
+# Pakphire - Logistics & Fulfillment Web Application
 
-Welcome to the Pakphire web application repository. This project is a Next.js application designed to showcase the logistics and fulfillment services offered by Pakphire, specifically focusing on Amazon FBA/FBM and Walmart Fulfillment Services (WFS).
+Welcome to the **Pakphire** web application repository. This project is a modern Next.js application designed to showcase logistics and fulfillment services, including Amazon FBA/FBM, Walmart Fulfillment Services (WFS), and courier delivery.
 
-## Features
+## 🚀 Features
 
--   **Dynamic Service Pages**: Reusable layout and components for various services (Amazon FBA, WFS, etc.).
--   **Dynamic Metadata**: SEO-friendly titles and descriptions dynamically generated for each service page.
--   **WFS Prep Service Page**: A dedicated page for Walmart Fulfillment Service preparation, featuring:
-    -   Hero section with call-to-action.
-    -   Problem/Solution intro.
-    -   "How It Works" steps.
-    -   Detailed service list.
-    -   "Why Choose Us" value propositions.
--   **Reusable Components**:
-    -   `HeroSection`: Configurable hero banner with optional buttons.
-    -   `ServiceCard`: Displays service details with alternating layouts.
-    -   `HowItWorks`: Animated step-by-step guide.
-    -   `WhyChooseUs`: Feature list with an accompanying image.
-    -   `GetStartedToday`: Call-to-action section.
-    -   `ContentSection`: Generic section for text-heavy content.
--   **Responsive Design**: Fully responsive layout optimized for desktop, tablet, and mobile.
--   **Modern UI**: Clean, professional aesthetics with smooth animations (Framer Motion).
+- **Dynamic Service Pages**: Reusable layouts for various services (Amazon FBA, WFS, etc.).
+- **Interactive Forms**:
+  - **Contact Form**: General inquiries.
+  - **Warehouse Booking**: Request warehouse space.
+  - **Courier Delivery**: Ship, Buy For Me, and Ship For Me requests.
+- **Email Integration**: Secure server-side email sending using **Nodemailer** via a centralized API route.
+- **Dockerized**: Optimized Docker setup for easy deployment.
+- **Responsive Design**: Fully responsive UI built with Tailwind CSS.
+- **Modern UI/UX**: Smooth animations with Framer Motion and clean aesthetics.
 
-## Project Structure
+## 🛠️ Tech Stack
 
--   `app/(main)`: Main application routes.
-    -   `services/[service]`: Dynamic route for service pages.
--   `components`: Reusable React components.
-    -   `UI`: Basic UI elements (Cards, Icons).
--   `Constants`: Data files for static content.
-    -   `ServiceItems.js`: Data for Amazon and general services.
-    -   `WfsData.js`: Data for the WFS Prep Service page.
-    -   `HowItWorks.js`: Default data for the "How It Works" section.
--   `public/images`: Static assets.
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Language**: JavaScript
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Email**: [Nodemailer](https://nodemailer.com/)
+- **Notifications**: [Sonner](https://sonner.emilkowal.ski/)
+- **State Management**: [TanStack Query](https://tanstack.com/query/latest)
 
-## Getting Started
+## 📂 Project Structure
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+├── app/
+│   ├── (main)/             # Main application routes
+│   │   ├── contact/        # Contact page
+│   │   ├── services/       # Dynamic service pages
+│   │   └── ...
+│   ├── actions/            # Client-side actions (form submission)
+│   ├── api/                # Server-side API routes
+│   │   └── send-email/     # Centralized email sending endpoint
+│   └── layout.js           # Root layout
+├── components/             # Reusable React components
+├── Constants/              # Static data and configuration
+├── lib/                    # Utilities and hooks
+├── public/                 # Static assets (images, icons)
+├── .env.local              # Environment variables (not committed)
+├── Dockerfile              # Docker build configuration
+└── next.config.mjs         # Next.js configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏁 Getting Started
 
-## Key Pages
+### Prerequisites
 
--   **Home**: `/`
--   **Amazon FBA/FBM**: `/services/amazon-fba-fbm`
--   **WFS Prep Service**: `/services/wfs-service`
+- Node.js 18+
+- npm, yarn, pnpm, or bun
 
-## Technologies Used
+### Installation
 
--   [Next.js](https://nextjs.org/)
--   [React](https://reactjs.org/)
--   [Tailwind CSS](https://tailwindcss.com/)
--   [Framer Motion](https://www.framer.com/motion/)
+1.  **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/your-repo/pakphire.git
+    cd pakphire
+    ```
+
+2.  **Install dependencies**:
+
+    ```bash
+    npm install
+    ```
+
+3.  **Configure Environment Variables**:
+    Create a `.env.local` file in the root directory and add your SMTP credentials:
+
+    ```env
+    SMTP_HOST=smtp.example.com
+    SMTP_PORT=587
+    SMTP_USER=your_email@example.com
+    SMTP_PASS=your_password
+    SMTP_FROM_EMAIL=your_email@example.com
+    ```
+
+4.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🐳 Docker Deployment
+
+This project includes a multi-stage `Dockerfile` optimized for production.
+
+### Build the Image
+
+```bash
+docker build -t pakphire-app .
+```
+
+### Run the Container
+
+```bash
+docker run -p 3000:3000 pakphire-app
+```
+
+The application will be available at `http://localhost:3000`.
+
+## 📧 API Documentation
+
+### Send Email
+
+**Endpoint**: `POST /api/send-email`
+
+Sends an email using the configured SMTP server.
+
+**Request Body**:
+
+```json
+{
+  "to": "recipient@example.com", // Optional, defaults to configured receiver
+  "subject": "Email Subject",
+  "html": "<h1>HTML Content</h1>"
+}
+```
+
+**Response**:
+
+- `200 OK`: Email sent successfully.
+- `500 Internal Server Error`: Failed to send email.
+
+## 📜 Scripts
+
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the application for production.
+- `npm run start`: Starts the production server.
+- `npm run lint`: Runs ESLint to check for code quality issues.
+
+## 📄 License
+
+This project is proprietary software. All rights reserved.
