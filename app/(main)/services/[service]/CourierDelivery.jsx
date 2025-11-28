@@ -131,7 +131,7 @@ function Delivery() {
     setIsPending(true);
     await sendEmail(
       form,
-      "template_q8mqu1a",
+      "New Delivery Request",
       "Delivery request sent successfully!"
     );
     setIsPending(false);
@@ -278,7 +278,11 @@ function Buy() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsPending(true);
-    await sendEmail(form, "template_q8mqu1a", "Buy request sent successfully!");
+    await sendEmail(
+      form,
+      "New Buy For Me Request",
+      "Buy request sent successfully!"
+    );
     setIsPending(false);
   };
 
@@ -334,7 +338,7 @@ function ShipPlaceholder() {
     setIsPending(true);
     await sendEmail(
       form,
-      "template_q8mqu1a",
+      "New Ship For Me Request",
       "Ship request sent successfully!"
     );
     setIsPending(false);

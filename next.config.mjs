@@ -5,15 +5,16 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'logo.clearbit.com',
+        protocol: "https",
+        hostname: "logo.clearbit.com",
       },
       {
-        protocol: 'https',
-        hostname: 'ui-avatars.com',
+        protocol: "https",
+        hostname: "ui-avatars.com",
       },
     ],
   },
+  output: "standalone",
 };
 
 export default nextConfig;

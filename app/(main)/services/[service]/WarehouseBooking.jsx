@@ -13,7 +13,7 @@ export default function WarehouseBooking() {
     setIsPending(true);
     await sendEmail(
       form,
-      "template_q8mqu1a",
+      "New Warehouse Booking",
       "Booking request sent successfully!"
     );
     setIsPending(false);

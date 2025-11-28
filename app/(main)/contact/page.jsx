@@ -19,7 +19,7 @@ export default function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsPending(true);
-    await sendEmail(form, "template_q8mqu1a");
+    await sendEmail(form, "New Contact Message");
     setIsPending(false);
   };
 
