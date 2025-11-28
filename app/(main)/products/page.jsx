@@ -83,10 +83,10 @@ export default function ProductListingPage() {
 
 function ProductCard({ product }) {
   return (
-    <Link href={`/products/${product.id}`} className="group relative bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
+    <div className="group relative bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
       
       {/* Image Container */}
-      <div className="relative aspect-4/5 bg-[#f9fafb] overflow-hidden">
+      <Link href={`/products/${product.id}`} className="relative aspect-4/5 bg-[#f9fafb] overflow-hidden block">
         <Image
           src={product.image}
           alt={product.title}
@@ -100,13 +100,15 @@ function ProductCard({ product }) {
             Sale
           </span>
         )}
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="p-4 flex flex-col grow">
-        <h3 className="text-gray-900 font-medium text-sm md:text-base truncate mb-1" title={product.title}>
-          {product.title}
-        </h3>
+        <Link href={`/products/${product.id}`} className="block">
+            <h3 className="text-gray-900 font-medium text-sm md:text-base truncate mb-1 hover:text-primary transition-colors" title={product.title}>
+            {product.title}
+            </h3>
+        </Link>
         <p className="text-gray-900 font-bold text-lg mb-4">
           From ${product.price.toFixed(2)}
         </p>
@@ -114,17 +116,17 @@ function ProductCard({ product }) {
         {/* Quick Add Button */}
         <div className="mt-auto">
             {/* Desktop: Hidden by default, visible on hover */}
-            <button className="hidden md:flex w-full items-center justify-center bg-primary text-white font-semibold py-2.5 rounded-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary/90 shadow-md">
+            <Link href={`/products/${product.id}`} className="hidden md:flex w-full items-center justify-center bg-primary text-white font-semibold py-2.5 rounded-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary/90 shadow-md">
                 View Details
-            </button>
+            </Link>
 
             {/* Mobile: Always visible (Cart Icon) */}
-            <button className="md:hidden w-full flex items-center justify-center bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary/90 transition-colors shadow-sm">
+            <Link href={`/products/${product.id}`} className="md:hidden w-full flex items-center justify-center bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary/90 transition-colors shadow-sm">
                 <FaEye size={16} className="mr-2" />
                 Details
-            </button>
+            </Link>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }

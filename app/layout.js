@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
+import { Providers } from "@/lib/providers";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Pakphire | Logistics and Fulfillment Services",
-  description: "Your trusted partner for Amazon FBA Prep, FBM, WFS, and 3PL services.",
+  description:
+    "Your trusted partner for Amazon FBA Prep, FBM, WFS, and 3PL services.",
   icons: {
     icon: "/metaLogo.png",
   },
@@ -28,7 +31,10 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning={true}
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
       >
-        {children}
+        <Providers>
+          {children}
+          <Toaster position="top-right" richColors />
+        </Providers>
       </body>
     </html>
   );

@@ -10,6 +10,7 @@ import {
 } from "react-icons/io5";
 
 import MobileMenu from "./MobileMenu";
+import { Providers } from "@/lib/providers";
 
 export default function MobileNav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,7 +41,8 @@ export default function MobileNav() {
             </button>
           </div>
 
-          <div className="relative flex flex-col items-center gap-1 text-gray-500 hover:text-orange-500 transition-colors cursor-pointer">
+          <Providers>
+            <div className="relative flex flex-col items-center gap-1 text-gray-500 hover:text-orange-500 transition-colors cursor-pointer">
             <div className="relative">
               <IoCartOutline size={26} />
               <span className="absolute -top-1 -right-2 w-4 h-4 flex items-center justify-center text-white text-[10px] font-bold bg-orange-500 rounded-full">
@@ -49,6 +51,7 @@ export default function MobileNav() {
             </div>
             <span className="text-[10px] font-medium">Cart</span>
           </div>
+          </Providers>
 
           <button className="flex flex-col items-center gap-1 text-gray-500 hover:text-orange-500 transition-colors">
             <IoCallOutline size={24} />

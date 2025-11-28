@@ -47,13 +47,13 @@ export default function Footer() {
             {/* Hotline */}
             <div>
               <ContactLabel icon={<FaPhoneAlt />} text="Hotline" />
-              <p className="pl-1 mt-1">+19296911930 , +19294998831</p>
+              <p className="pl-1 mt-1">+1 703 609 1602</p>
             </div>
 
             {/* Email */}
             <div>
               <ContactLabel icon={<FaEnvelope />} text="Email" />
-              <p className="pl-1 mt-1">support@pakphire.com</p>
+              <p className="pl-1 mt-1">info@pakphire.com</p>
             </div>
 
             {/* Open Time */}

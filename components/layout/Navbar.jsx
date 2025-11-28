@@ -10,8 +10,11 @@ import { NAV_LINKS } from "@/Constants/NavItems";
 import MobileNav from "./MobileNav"; 
 import Image from "next/image";
 import Link from "next/link";
+import { useCartData } from "@/lib/hooks/useCartData";
+
 
 export default function Navbar() {
+  const { cartCount } = useCartData();
   const [isServiceOpen, setIsServiceOpen] = useState(false);
 
   return (
@@ -22,14 +25,13 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-20">
             {/* 1. LOGO */}
             <div className="flex items-center cursor-pointer">
-              {/* Link the logo to home for better UX */}
               <Link href="/">
                 <Image
                   src="/logo.png"
                   alt="PakPhire Logo"
                   width={150} 
                   height={50} 
-                  className="h-12 w-auto object-contain" // Tailwind handles the visual siz
+                  className="h-12 w-auto object-contain"
                   priority 
                 />
               </Link>
@@ -102,11 +104,13 @@ export default function Navbar() {
 
               {/* Desktop Only Icons (Mobile has them in bottom bar) */}
               <div className="hidden lg:flex items-center gap-2">
-                <Link href="/cart" className="p-2 hover:bg-gray-100 rounded-full text-gray-600 transition-colors relative">
+                  <Link href="/cart" className="p-2 hover:bg-gray-100 rounded-full text-gray-600 transition-colors relative">
                   <IoCartOutline size={24} />
-                  <span className="absolute top-0 right-0 h-4 w-4 bg-orange-500 text-white text-[10px] font-bold flex items-center justify-center rounded-full">
-                    0
-                  </span>
+                  {cartCount > 0 && (
+                    <span className="absolute top-0 right-0 h-4 w-4 bg-orange-500 text-white text-[10px] font-bold flex items-center justify-center rounded-full">
+                      {cartCount}
+                    </span>
+                  )}
                 </Link>
                 <button className="p-2 hover:bg-gray-100 rounded-full text-gray-600 transition-colors">
                   <IoPersonOutline size={24} />
