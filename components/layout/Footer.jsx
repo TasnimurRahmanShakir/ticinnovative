@@ -16,11 +16,21 @@ import {
   FaInstagram,
   FaPinterestP,
 } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   // Common class for links to ensure consistency
   const linkHoverClasses =
     "block transition-all duration-300 hover:text-primary hover:translate-x-2";
+
+  const footerLinks = [
+    { title: "About us", link: "/about" },
+    { title: "Privacy Policy", link: "/privacy-policy" },
+    { title: "Terms & Conditions", link: "/terms-conditions" },
+    { title: "Refund and Returns Policy", link: "/refund-policy" },
+    { title: "Our Sitemap", link: "/sitemap" },
+    { title: "Reviews and Testimonials", link: "/#testimonials" },
+  ];
 
   return (
     <footer className="bg-[#f9f9f9] relative z-10 text-gray-600 text-sm">
@@ -45,16 +55,24 @@ export default function Footer() {
             </div>
 
             {/* Hotline */}
-            <div>
+            <Link
+              href="https://wa.me/+17036091602"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <ContactLabel icon={<FaPhoneAlt />} text="Hotline" />
               <p className="pl-1 mt-1">+1 703 609 1602</p>
-            </div>
+            </Link>
 
             {/* Email */}
-            <div>
+            <Link
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@pakphire.com&su=Collaboration%20Opportunity"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <ContactLabel icon={<FaEnvelope />} text="Email" />
               <p className="pl-1 mt-1">info@pakphire.com</p>
-            </div>
+            </Link>
 
             {/* Open Time */}
             <div>
@@ -90,16 +108,17 @@ export default function Footer() {
               Our Stores
             </h3>
             <ul className="space-y-3">
-              {["Jamaica 1", "Jamaica 2", "Richmond Hill", "New Jersey"].map(
-                (item) => (
-                  <li key={item}>
-                    {/* Applied hover effect here */}
-                    <a href="#" className={linkHoverClasses}>
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {["Jamaica 1"].map((item) => (
+                <li key={item}>
+                  {/* Applied hover effect here */}
+                  <Link
+                    href="services/warehouse-support#jamaica-1"
+                    className={linkHoverClasses}
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -109,19 +128,12 @@ export default function Footer() {
               Useful Links
             </h3>
             <ul className="space-y-3">
-              {[
-                "About us",
-                "Privacy Policy",
-                "Terms & Conditions",
-                "Refund and Returns Policy",
-                "Our Sitemap",
-                "Reviews and Testimonials",
-              ].map((item) => (
-                <li key={item}>
+              {footerLinks.map((item) => (
+                <li key={item.title}>
                   {/* Applied hover effect here */}
-                  <a href="#" className={linkHoverClasses}>
-                    {item}
-                  </a>
+                  <Link href={item.link} className={linkHoverClasses}>
+                    {item.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -132,11 +144,11 @@ export default function Footer() {
       {/* Copyright Bar */}
       <div className="bg-[#111] text-[#999] py-6 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center space-y-2">
-          <p>Copyright © 2025 • TIC Accessories • All Rights Reserved</p>
+          <p>Copyright © 2025 • Pakphire LLC • All Rights Reserved</p>
           <p>
             Website Design, Development & SEO Consulting Services by{" "}
             <a href="#" className="text-[#007bff] hover:underline">
-              Cyber World IT
+              Jolforing Tourtainment
             </a>
           </p>
         </div>

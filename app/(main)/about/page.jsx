@@ -8,13 +8,22 @@ export const metadata = {
 
 export default function AboutUs() {
   const teamMembers = [
-    { name: "Kashif Arif", role: "Managing Member", image: "/team/Kashif-Arif.png" },
+    {
+      name: "Kashif Arif",
+      role: "Managing Member",
+      image: "/team/Kashif-Arif.png",
+    },
+
+    {
+      name: "Afshan Omar",
+      role: "Managing Member",
+      image: "/team/Afshan-Omar.png",
+    },
     {
       name: "Asif Omar",
       role: "Member",
       image: "/team/Asif-Omar.png",
     },
-    { name: "Afshan Omar", role: "Managing Member", image: "/team/Afshan-Omar.png" },
   ];
 
   return (

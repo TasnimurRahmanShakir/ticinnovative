@@ -21,27 +21,32 @@ export default function WarehouseSupport() {
         desc="Welcome to TIC Innovative Inc, your trusted partner for Amazon FBA Prep, FBM, Delivery, Carton Handling, 3PL Services, and Warehouse Support. We specialize in helping Amazon sellers like you save time, reduce costs, and scale your business with seamless logistics solutions."
         image="/images/warehouse-support.png"
       />
-      <section className='container mx-auto py-12 w-full px-4'>
-        <h1 className='text-3xl py-6 text-center font-bold mb-8'>Warehouse & Store Address</h1>
-        
-        <div className='flex flex-wrap justify-center gap-8 w-full'>
-            {warehouseLocations.map((location) => (
-                <div key={location.id} className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm">
-                    <LocationCard location={location} />
-                </div>
-            ))}
+      <section id="jamaica-1" className="container mx-auto py-12 w-full px-4">
+        <h1 className="text-3xl py-6 text-center font-bold mb-8">
+          Warehouse & Store Address
+        </h1>
+
+        <div className="flex flex-wrap justify-center gap-8 w-full">
+          {warehouseLocations.map((location) => (
+            <div
+              key={location.id}
+              className="w-full md:max-w-[80%]"
+            >
+              <LocationCard location={location} />
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="py-16 bg-accent">
         <div className="container mx-auto px-4">
-            <SectionHeading title="Our Warehouse Gallery" />
-            <PhotoGallery images={images} />
+          <SectionHeading title="Our Warehouse Gallery" />
+          <PhotoGallery images={images} />
         </div>
       </section>
       <WarehouseBooking />
     </>
-  )
+  );
 }
 
 function LocationCard({ location }) {
