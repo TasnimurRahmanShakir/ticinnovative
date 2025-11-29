@@ -4,9 +4,6 @@ import ServiceCard from "@/components/UI/ServiceCard";
 import {
   amazonService,
   amazonFBMService,
-  deliveryCartonService,
-  threePLService,
-  warehouseSupportService,
 } from "@/Constants/ServiceItems";
 import HeroSection from "@/components/HeroSection";
 import ContentSection from "@/components/ContentSection";
@@ -27,7 +24,6 @@ import WarehouseSupport from "./WarehouseSupport";
 export default async function Page({ params }) {
   const { service } = await params;
 
-  await new Promise((resolve) => setTimeout(resolve, 3000));
   const validServices = [
     "amazon-fba-fbm",
     "wfs-service",
