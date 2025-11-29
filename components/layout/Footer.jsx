@@ -28,7 +28,6 @@ export default function Footer() {
     { title: "Privacy Policy", link: "/privacy-policy" },
     { title: "Terms & Conditions", link: "/terms-conditions" },
     { title: "Refund and Returns Policy", link: "/refund-policy" },
-    { title: "Our Sitemap", link: "/sitemap" },
     { title: "Reviews and Testimonials", link: "/#testimonials" },
   ];
 
@@ -47,7 +46,7 @@ export default function Footer() {
             <div>
               <ContactLabel icon={<FaHome />} text="Address" />
               <div className="pl-1 mt-2 leading-relaxed">
-                <p className="font-medium text-gray-800">Pakphire</p>
+                <p className="font-medium text-gray-800">Pakphire LLC</p>
                 <p>Jamaica Branch</p>
                 <p>Building Number: 184 -04 Hillside Avenue,</p>
                 <p>City :- Jamaica, State :- NY, Post code :- 11432</p>
@@ -81,14 +80,14 @@ export default function Footer() {
             </div>
 
             {/* Social Media Icons */}
-            <div className="flex flex-wrap gap-2 pt-2">
+            {/* <div className="flex flex-wrap gap-2 pt-2">
               <SocialIcon color="bg-[#3b5998]" icon={<FaFacebookF />} />
               <SocialIcon color="bg-[#25D366]" icon={<FaWhatsapp />} />
               <SocialIcon color="bg-[#FF0000]" icon={<FaYoutube />} />
               <SocialIcon color="bg-[#1DA1F2]" icon={<FaTwitter />} />
               <SocialIcon color="bg-[#C13584]" icon={<FaInstagram />} />
               <SocialIcon color="bg-[#E60023]" icon={<FaPinterestP />} />
-            </div>
+            </div> */}
           </div>
 
           {/* Column 2: Payment Details */}
@@ -97,9 +96,9 @@ export default function Footer() {
               Payment Details
             </h3>
             {/* Applied hover effect here */}
-            <p className={`cursor-pointer ${linkHoverClasses}`}>
+            <Link href="/payment" className={`cursor-pointer ${linkHoverClasses}`}>
               USA Bank Details
-            </p>
+            </Link>
           </div>
 
           {/* Column 3: Our Stores */}
@@ -108,7 +107,7 @@ export default function Footer() {
               Our Stores
             </h3>
             <ul className="space-y-3">
-              {["Jamaica 1"].map((item) => (
+              {["Jamaica Branch"].map((item) => (
                 <li key={item}>
                   {/* Applied hover effect here */}
                   <Link
@@ -148,7 +147,7 @@ export default function Footer() {
           <p>
             Website Design, Development & SEO Consulting Services by{" "}
             <a href="#" className="text-[#007bff] hover:underline">
-              Jolforing Tourtainment
+              Jolforing
             </a>
           </p>
         </div>

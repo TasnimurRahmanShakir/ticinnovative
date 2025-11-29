@@ -17,9 +17,11 @@ export default function WarehouseSupport() {
   return (
     <>
       <HeroSection
-        title="Warehouse Page Information"
-        desc="Welcome to TIC Innovative Inc, your trusted partner for Amazon FBA Prep, FBM, Delivery, Carton Handling, 3PL Services, and Warehouse Support. We specialize in helping Amazon sellers like you save time, reduce costs, and scale your business with seamless logistics solutions."
+        title="Expert Warehouse & 3PL Support"
+        desc="Your trusted partner for FBA Prep, FBM, and carton handling. We provide seamless logistics solutions to save you time and reduce costs."
         image="/images/warehouse-support.png"
+        buttonText="Get a Quote"
+        buttonLink="/contact"
       />
       <section id="jamaica-1" className="container mx-auto py-12 w-full px-4">
         <h1 className="text-3xl py-6 text-center font-bold mb-8">
@@ -28,10 +30,7 @@ export default function WarehouseSupport() {
 
         <div className="flex flex-wrap justify-center gap-8 w-full">
           {warehouseLocations.map((location) => (
-            <div
-              key={location.id}
-              className="w-full md:max-w-[80%]"
-            >
+            <div key={location.id} className="w-full md:max-w-[80%]">
               <LocationCard location={location} />
             </div>
           ))}
@@ -56,7 +55,7 @@ function LocationCard({ location }) {
                 <h2 className='text-2xl font-bold mb-2 text-gray-800'>{location.title}</h2>
                 <p className='text-gray-600 mb-4'>{location.address}</p>
             </div>
-            <div className='relative w-full h-64 bg-gray-200'>
+            <div className='relative w-full h-[400px] bg-gray-200'>
                 <iframe 
                     src={location.mapUrl}
                     width="100%" 

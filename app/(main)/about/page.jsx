@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Button from "@/components/UI/Button";
 
 export const metadata = {
   title: "About Us | Pakphire LLC",
@@ -47,9 +48,14 @@ export default function AboutUs() {
           dependable solutions tailored to your business needs.
         </p>
 
-        {/* <button className="bg-[#1e388c] text-white px-4 py-3 rounded-lg mt-4">
+        <Button
+          href="/company-profile.pdf"
+          target="_blank"
+          variant="primary"
+          className="mt-4"
+        >
           Download Company Profile
-        </button> */}
+        </Button>
       </div>
 
       <div className="w-full lg:w-[80%] mx-auto py-12">

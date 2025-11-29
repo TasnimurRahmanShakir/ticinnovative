@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FAQ from "@/components/FAQ";
 import GetStartedToday from "@/components/GetStartedToday";
 import HeroSection from "@/components/HeroSection";
@@ -9,15 +10,17 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 export default function Home() {
   return (
     <div className="relative">
-      <div
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z10"
-        style={{ backgroundImage: "url('/images/heroBackgroundImage.webp')" }}
-        aria-hidden="true"
-      >
-        <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="fixed inset-0 -z-10">
+        <Image
+          src="/images/heroBackgroundImage.webp"
+          alt="Background"
+          fill
+          className="object-cover opacity-60"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
       <HeroSection
-        image="/images/heroHome.jpg"
         title="Your Trusted Partner for Seamless Logistics Solutions"
         desc="Pakphire provides expert Amazon FBA Prep, FBM, WFS, and 3PL services to help you scale your business."
       />

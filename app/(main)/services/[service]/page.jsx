@@ -40,9 +40,11 @@ export default async function Page({ params }) {
       {service === "amazon-fba-fbm" && (
         <>
           <HeroSection
-            image="/images/heroAmazonFBA.webp"
-            title="Streamline Your Amazon Business with Expert Amazon FBA Prep And Amazon FBM Services."
-            desc="Welcome to Pakphire, your trusted partner for Amazon FBA Prep, FBM, Delivery, Carton Handling, 3PL Services, and Warehouse Support. We specialize in helping Amazon sellers like you save time, reduce costs, and scale your business with seamless logistics solutions."
+            image="/images/fba-fbm.png"
+            title="Scale Your Amazon Business"
+            desc="Pakphire LLC handles your FBA Prep, FBM, and 3PL needs. We save you time and reduce costs so you can focus on growth."
+            buttonText="Get a Quote"
+            buttonLink="/contact"
           />
           <section id="services" className="w-full bg-white relative z-10">
             {" "}
@@ -73,7 +75,7 @@ export default async function Page({ params }) {
             <ServiceCard
               items={wfsServices}
               align="md:flex-row"
-              image="/images/ServiceThree.jpg" 
+              image="/images/ServiceThree.jpg"
               header={true}
               bgColor="bg-[#e3ebf5]"
             />
@@ -81,7 +83,7 @@ export default async function Page({ params }) {
           <WhyChooseUs
             items={wfsWhyChooseUs}
             title="The Partner You Need for The Growth You Want"
-            image="/images/ServiceFour.png" 
+            image="/images/ServiceFour.png"
           />
           <GetStartedToday {...wfsCta} />
         </>

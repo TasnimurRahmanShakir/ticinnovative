@@ -1,8 +1,8 @@
 export const deliveryHero = {
-    title: "Delivery & Courier",
-    desc: "Welcome to TIC Innovative Inc, your trusted partner for Amazon FBA Prep, FBM, Delivery, Carton Handling, 3PL Services, and Warehouse Support. We specialize in helping Amazon sellers like you save time, reduce costs, and scale your business with seamless logistics solutions.",
+  title: "Fast & Reliable Delivery",
+  desc: "Streamline your logistics with Pakphire LLC. We ensure your inventory moves seamlessly, helping you save time and cut delivery costs.",
     image: "/images/courier-delivery-hero.png",
-
+  
 };
 
 export const deliveryCategories = [

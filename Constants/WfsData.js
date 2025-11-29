@@ -1,9 +1,9 @@
 export const wfsHero = {
-    title: "Unlock Walmart’s Reach Without The Hassle.",
-    desc: "Expert WFS Prep & Packaging. Guaranteed Compliance. Scalable Growth.",
-    image: "/images/wfs-hero.png",
-    buttonText: "Get Your Free Quote Today",
-    buttonLink: "/contact"
+  title: "Unlock Walmart’s Reach Without The Hassle.",
+  desc: "Expert WFS Prep & Packaging. Guaranteed Compliance. Scalable Growth.",
+  image: "/images/wfs-hero.png",
+  buttonText: "Get a Quote",
+  buttonLink: "/contact",
 };
 
 export const wfsIntro = {
