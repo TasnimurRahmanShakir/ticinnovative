@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
       >
         <Providers>
           {children}
-          <Toaster position="top-right" richColors />
+          <Toaster position="top-right" richColors closeButton duration={1000} />
         </Providers>
       </body>
     </html>

@@ -17,7 +17,7 @@ export async function POST(request) {
 
     const mailOptions = {
       from: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER,
-      to: "tasnim.bd.cse@gmail.com", // Default to info@pakphire.com if not specified
+      to: process.env.SMTP_TO_EMAIL, // Default to info@pakphire.com if not specified
       subject: subject,
       html: html,
     };
