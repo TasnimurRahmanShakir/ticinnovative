@@ -14,13 +14,13 @@ export default function Services() {
       <ServiceCard
         items={amazonService}
         align="md:flex-row"
-        image="/images/serviceOne.jpg"
+        image="/images/ServiceOne.jpg"
         header={true}
       />
       <ServiceCard
         items={amazonFBMService}
         align="md:flex-row-reverse"
-        image="/images/ServiceOne.jpg"
+        image="/images/ServiceTwo.jpg"
         bgColor="bg-[#e3ebf5]"
       />
       <ServiceCard
