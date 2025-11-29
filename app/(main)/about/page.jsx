@@ -1,12 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export default async function AboutUs() {
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("About Us");
-    }, 1000);
-  });
+export default function AboutUs() {
   const teamMembers = [
     { name: "Kashif Arif", role: "CTO", image: "/team/Kashif-Arif.png" },
     {
