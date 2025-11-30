@@ -21,8 +21,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
       <HeroSection
-        title="Your Trusted Partner for Seamless Logistics Solutions"
-        desc="Pakphire provides expert Amazon FBA Prep, FBM, WFS, and 3PL services to help you scale your business."
+        title="Empowering Your E-commerce Growth"
+        desc="Globally trusted logistics partner for FBA Prep, FBM, WFS, and 3PL. We handle the complexities of fulfillment while you focus on building your brand."
+        buttonText="Get Your Custom Quote"
+        buttonLink="/contact"
       />
       <Services />
       <HowItWorks />

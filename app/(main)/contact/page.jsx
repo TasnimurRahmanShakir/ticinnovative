@@ -137,7 +137,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-semibold text-gray-900">
                 Head Office
               </h3>
-              <p className="font-medium">Tic Innovative Inc</p>
+              <p className="font-medium">Pakphire LLC</p>
               <p>Jamaica Branch</p>
               <p>Building Number :184 -04 Hillside Avenue ,</p>
               <p>City :- Jamaica, State : - NY, Post code :- 11432</p>
@@ -179,7 +179,7 @@ export default function ContactPage() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-3 pt-4">
+            {/* <div className="flex gap-3 pt-4">
               <a
                 href="#"
                 className="bg-indigo-600 text-white p-3 rounded hover:bg-indigo-700 transition-colors"
@@ -216,7 +216,7 @@ export default function ContactPage() {
               >
                 <FaPinterestP className="w-5 h-5" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

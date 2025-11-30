@@ -27,7 +27,7 @@ export default function Footer() {
     { title: "About us", link: "/about" },
     { title: "Privacy Policy", link: "/privacy-policy" },
     { title: "Terms & Conditions", link: "/terms-conditions" },
-    { title: "Refund and Returns Policy", link: "/refund-policy" },
+    { title: "Refund and Returns Policy", link: "/refund-return-policy" },
     { title: "Reviews and Testimonials", link: "/#testimonials" },
   ];
 
@@ -96,7 +96,10 @@ export default function Footer() {
               Payment Details
             </h3>
             {/* Applied hover effect here */}
-            <Link href="/payment" className={`cursor-pointer ${linkHoverClasses}`}>
+            <Link
+              href="/payment"
+              className={`cursor-pointer ${linkHoverClasses}`}
+            >
               USA Bank Details
             </Link>
           </div>

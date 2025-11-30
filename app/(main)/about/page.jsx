@@ -48,14 +48,14 @@ export default function AboutUs() {
           dependable solutions tailored to your business needs.
         </p>
 
-        <Button
+        {/* <Button
           href="/company-profile.pdf"
           target="_blank"
           variant="primary"
           className="mt-4"
         >
           Download Company Profile
-        </Button>
+        </Button> */}
       </div>
 
       <div className="w-full lg:w-[80%] mx-auto py-12">
@@ -169,8 +169,7 @@ export default function AboutUs() {
       <hr className="w-full h-[2px] border-[#1e388c] mx-auto lg:w-[80%] pb-10" />
       <div>
         <h1 className="text-3xl font-bold mb-4 text-center">
-          Our Magnificent <br />{" "}
-          <span className="text-[#1e388c]">Management</span>
+          Our Management
         </h1>
 
         <div className="relative mt-20 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-20 lg:gap-12 w-full lg:w-[90%] mx-auto px-4">
