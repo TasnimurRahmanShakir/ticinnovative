@@ -1,27 +1,26 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaShoppingCart, FaChevronDown, FaEye } from 'react-icons/fa'
-import { cn } from '@/lib/utils'
-import { products, categories } from '@/Constants/products'
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { FaShoppingCart, FaChevronDown, FaEye } from "react-icons/fa";
+import { cn } from "@/lib/utils";
+import { products, categories } from "@/Constants/products";
 
 export default function ProductListingPage() {
-  const [activeCategory, setActiveCategory] = useState("All")
-  const [sortBy, setSortBy] = useState("Best Selling")
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [sortBy, setSortBy] = useState("Best Selling");
 
-  const filteredProducts = activeCategory === "All" 
-    ? products 
-    : products.filter(p => p.category === activeCategory)
+  const filteredProducts =
+    activeCategory === "All"
+      ? products
+      : products.filter((p) => p.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      
       {/* Sticky Header: Categories & Sort */}
-      <div className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+      <div className="sticky top-20 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          
           {/* Category Pills - Scrollable */}
           <div className="w-[calc(100%+2rem)] -mx-4 px-4 md:w-auto md:mx-0 md:px-0 overflow-x-auto no-scrollbar">
             <div className="flex items-center gap-2 min-w-max">
@@ -52,7 +51,12 @@ export default function ProductListingPage() {
               </button>
               {/* Dropdown Menu (Mock) */}
               <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right z-50">
-                {["Best Selling", "Price: Low to High", "Price: High to Low", "Newest"].map((option) => (
+                {[
+                  "Best Selling",
+                  "Price: Low to High",
+                  "Price: High to Low",
+                  "Newest",
+                ].map((option) => (
                   <button
                     key={option}
                     onClick={() => setSortBy(option)}
@@ -64,7 +68,6 @@ export default function ProductListingPage() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -76,24 +79,25 @@ export default function ProductListingPage() {
           ))}
         </div>
       </div>
-
     </div>
-  )
+  );
 }
 
 function ProductCard({ product }) {
   return (
     <div className="group relative bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
-      
       {/* Image Container */}
-      <Link href={`/products/${product.id}`} className="relative aspect-4/5 bg-[#f9fafb] overflow-hidden block">
+      <Link
+        href={`/products/${product.id}`}
+        className="relative aspect-4/5 bg-[#f9fafb] overflow-hidden block"
+      >
         <Image
           src={product.image}
           alt={product.title}
           fill
           className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
         />
-        
+
         {/* Sale Badge */}
         {product.isSale && (
           <span className="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider shadow-sm">
@@ -105,9 +109,12 @@ function ProductCard({ product }) {
       {/* Content */}
       <div className="p-4 flex flex-col grow">
         <Link href={`/products/${product.id}`} className="block">
-            <h3 className="text-gray-900 font-medium text-sm md:text-base truncate mb-1 hover:text-primary transition-colors" title={product.title}>
+          <h3
+            className="text-gray-900 font-medium text-sm md:text-base truncate mb-1 hover:text-primary transition-colors"
+            title={product.title}
+          >
             {product.title}
-            </h3>
+          </h3>
         </Link>
         <p className="text-gray-900 font-bold text-lg mb-4">
           From ${product.price.toFixed(2)}
@@ -115,18 +122,24 @@ function ProductCard({ product }) {
 
         {/* Quick Add Button */}
         <div className="mt-auto">
-            {/* Desktop: Hidden by default, visible on hover */}
-            <Link href={`/products/${product.id}`} className="hidden md:flex w-full items-center justify-center bg-primary text-white font-semibold py-2.5 rounded-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary/90 shadow-md">
-                View Details
-            </Link>
+          {/* Desktop: Hidden by default, visible on hover */}
+          <Link
+            href={`/products/${product.id}`}
+            className="hidden md:flex w-full items-center justify-center bg-primary text-white font-semibold py-2.5 rounded-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary/90 shadow-md"
+          >
+            View Details
+          </Link>
 
-            {/* Mobile: Always visible (Cart Icon) */}
-            <Link href={`/products/${product.id}`} className="md:hidden w-full flex items-center justify-center bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary/90 transition-colors shadow-sm">
-                <FaEye size={16} className="mr-2" />
-                Details
-            </Link>
+          {/* Mobile: Always visible (Cart Icon) */}
+          <Link
+            href={`/products/${product.id}`}
+            className="md:hidden w-full flex items-center justify-center bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary/90 transition-colors shadow-sm"
+          >
+            <FaEye size={16} className="mr-2" />
+            Details
+          </Link>
         </div>
       </div>
     </div>
-  )
+  );
 }

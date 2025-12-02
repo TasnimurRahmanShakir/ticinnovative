@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <>
       {/* --- MAIN TOP NAVBAR --- */}
-      <nav className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm font-sans">
+      <nav className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm font-sans">
         <div className="container mx-auto sm:px-6">
           <div className="flex justify-between items-center h-20">
             {/* 1. LOGO */}
@@ -70,7 +70,7 @@ export default function Navbar() {
 
                       {/* Dropdown */}
                       <div
-                        className={`absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden transition-all duration-200 transform ${
+                        className={`absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden transition-all duration-200 transform z-50 ${
                           isServiceOpen
                             ? "opacity-100 translate-y-0 visible"
                             : "opacity-0 translate-y-2 invisible"

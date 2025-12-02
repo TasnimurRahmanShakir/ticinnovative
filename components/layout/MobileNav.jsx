@@ -32,7 +32,7 @@ export default function MobileNav() {
           </Link>
 
           <Link
-            href="/profile"
+            href="/"
             className="flex flex-col items-center gap-1 text-gray-500 hover:text-orange-500 transition-colors"
           >
             <IoPersonOutline size={24} />
